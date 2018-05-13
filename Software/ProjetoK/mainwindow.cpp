@@ -13,6 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->pushButton->setFixedWidth(rec.width());
     ui->pushButton->setIcon(ButtonIcon);
+
+    mImage = new QImage(rec.width(), 600, QImage::Format_ARGB32_Premultiplied);
+    mPainter = new QPainter(mImage);
+    mEnabled = false;
+
 }
 
 MainWindow::~MainWindow()
@@ -20,10 +25,57 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_pushButton_clicked()
 {
     QMessageBox messageBox;
     messageBox.critical(0,"Erro","Tá pensando que isso é Revit? -.-");
     messageBox.setFixedSize(500,200);
+}
+
+void MainWindow::paintEvent(QPaintEvent *e)
+{
+    QPainter painter(this);
+    painter.fillRect(mImage->rect(), Qt::white);
+    painter.drawImage(0, 0, *mImage);
+    e->accept();
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *e)
+{
+    mEnabled = true;
+    mBegin = e->pos();
+    e->accept();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *e)
+{
+    if(!mEnabled){
+        e->accept();
+        return;
+    }
+    QPen pen(Qt::black);
+    pen.setCapStyle(Qt::RoundCap);
+    pen.setWidth(10);
+    mEnd = e->pos();
+    mPainter->setPen(pen);
+    mPainter->drawLine(mBegin, mEnd);
+    mBegin = mEnd;
+    update();
+    e->accept();
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *e)
+{
+    mEnabled = false;
+    e->accept();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    //delete mImage;
+    //delete mPainter;
+    QRect rec = QApplication::desktop()->screenGeometry();
+    mImage = new QImage(rec.width(), 600, QImage::Format_ARGB32_Premultiplied);
+    mPainter = new QPainter(mImage);
+    mEnabled = false;
 }

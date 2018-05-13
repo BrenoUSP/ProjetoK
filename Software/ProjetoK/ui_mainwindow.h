@@ -27,6 +27,9 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -46,6 +49,21 @@ public:
         pushButton->setGeometry(QRect(0, 0, 1368, 141));
         pushButton->setMinimumSize(QSize(1368, 141));
         pushButton->setIconSize(QSize(1369, 143));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(940, 610, 141, 61));
+        QFont font;
+        font.setPointSize(12);
+        pushButton_2->setFont(font);
+        pushButton_2->setIconSize(QSize(16, 16));
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(280, 610, 141, 61));
+        pushButton_3->setFont(font);
+        pushButton_4 = new QPushButton(centralWidget);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(550, 610, 271, 61));
+        pushButton_4->setFont(font);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -65,6 +83,9 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Projeto Kiwi", nullptr));
         pushButton->setText(QString());
+        pushButton_2->setText(QApplication::translate("MainWindow", "Enviar casa", nullptr));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Limpar", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Exemplo de uma casa profissional", nullptr));
     } // retranslateUi
 
 };
