@@ -32,3 +32,7 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES += \
+    Resources/kiwiLogoGif.gif \
+    Resources/kiwiIcon.png

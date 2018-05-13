@@ -51,7 +51,8 @@ OBJECTS       = release/main.o \
 		release/mainwindow.o \
 		release/moc_mainwindow.o
 
-DIST          =  ..\ProjetoK\mainwindow.h ..\ProjetoK\main.cpp \
+DIST          = Resources/kiwiLogoGif.gif \
+		Resources/kiwiIcon.png ..\ProjetoK\mainwindow.h ..\ProjetoK\main.cpp \
 		..\ProjetoK\mainwindow.cpp
 QMAKE_TARGET  = ProjetoK
 DESTDIR        = release\ #avoid trailing-slash linebreak
