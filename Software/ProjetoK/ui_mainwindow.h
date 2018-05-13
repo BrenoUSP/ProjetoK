@@ -37,6 +37,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
+        MainWindow->setEnabled(true);
         MainWindow->resize(1368, 768);
         MainWindow->setMinimumSize(QSize(1368, 768));
         QIcon icon;
