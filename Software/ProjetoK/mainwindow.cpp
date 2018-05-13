@@ -1,5 +1,9 @@
 #include "mainwindow.h"
+#include "exampleimage.h"
 #include "ui_mainwindow.h"
+#include <iostream>
+
+QElapsedTimer timer;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,8 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->pushButton->setFixedWidth(rec.width());
     ui->pushButton->setIcon(ButtonIcon);
+    ui->pushButton_2->setEnabled(false);
 
-    mImage = new QImage(rec.width(), 600, QImage::Format_ARGB32_Premultiplied);
+    mImage = new QImage(rec.width(), 550, QImage::Format_ARGB32_Premultiplied);
     mPainter = new QPainter(mImage);
     mEnabled = false;
 
@@ -42,6 +47,10 @@ void MainWindow::paintEvent(QPaintEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e)
 {
+    if(timer.elapsed() > 60000){
+        ui->pushButton_2->setEnabled(true);
+    }
+
     mEnabled = true;
     mBegin = e->pos();
     e->accept();
@@ -49,6 +58,10 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
+    if(timer.elapsed() > 60000){
+        ui->pushButton_2->setEnabled(true);
+    }
+
     if(!mEnabled){
         e->accept();
         return;
@@ -75,7 +88,19 @@ void MainWindow::on_pushButton_3_clicked()
     //delete mImage;
     //delete mPainter;
     QRect rec = QApplication::desktop()->screenGeometry();
-    mImage = new QImage(rec.width(), 600, QImage::Format_ARGB32_Premultiplied);
+    mImage = new QImage(rec.width(), 550, QImage::Format_ARGB32_Premultiplied);
     mPainter = new QPainter(mImage);
     mEnabled = false;
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    exampleImage *w = new exampleImage();
+    timer.start();
+    w->show();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    // ABRE O CERTIFICADO E O VÍDEO
 }

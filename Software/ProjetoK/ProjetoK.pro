@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    exampleimage.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    exampleimage.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    exampleimage.ui
 
 DISTFILES += \
     Resources/kiwiLogoGif.gif \

@@ -11,6 +11,7 @@
 #include <QPaintEvent>
 #include <QMouseEvent>
 #include <QImage>
+#include <QElapsedTimer>
 
 namespace Ui {
 class MainWindow;
@@ -31,6 +32,10 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_2_clicked();
 
 protected:
     void paintEvent(QPaintEvent *e) override;
