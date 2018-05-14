@@ -4,9 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+INCLUDEPATH += $$PWD
 
 TARGET = ProjetoK
 TEMPLATE = app
@@ -27,17 +29,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     exampleimage.cpp \
-    texto.cpp
+    texto.cpp \
+    certificado.cpp
 
 HEADERS += \
         mainwindow.h \
     exampleimage.h \
-    texto.h
+    texto.h \
+    certificado.h
 
 FORMS += \
         mainwindow.ui \
     exampleimage.ui \
-    texto.ui
+    texto.ui \
+    certificado.ui
 
 DISTFILES += \
     Resources/kiwiLogoGif.gif \

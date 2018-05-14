@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "exampleimage.h"
+#include "certificado.h"
 #include "ui_mainwindow.h"
 #include <iostream>
 
@@ -102,5 +103,6 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    // ABRE O CERTIFICADO E O VÍDEO
+    Certificado *w = new Certificado();
+    w->show();
 }

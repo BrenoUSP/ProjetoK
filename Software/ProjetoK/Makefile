@@ -236,8 +236,11 @@ Makefile: ProjetoK.pro C:/Qt/5.10.1/mingw53_32/mkspecs/win32-g++/qmake.conf C:/Q
 		C:/Qt/5.10.1/mingw53_32/mkspecs/features/lex.prf \
 		ProjetoK.pro \
 		C:/Qt/5.10.1/mingw53_32/lib/qtmain.prl \
+		C:/Qt/5.10.1/mingw53_32/lib/Qt5MultimediaWidgets.prl \
+		C:/Qt/5.10.1/mingw53_32/lib/Qt5Multimedia.prl \
 		C:/Qt/5.10.1/mingw53_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.10.1/mingw53_32/lib/Qt5Gui.prl \
+		C:/Qt/5.10.1/mingw53_32/lib/Qt5Network.prl \
 		C:/Qt/5.10.1/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ProjetoK.pro -spec win32-g++
 C:/Qt/5.10.1/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -415,8 +418,11 @@ C:/Qt/5.10.1/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/5.10.1/mingw53_32/mkspecs/features/lex.prf:
 ProjetoK.pro:
 C:/Qt/5.10.1/mingw53_32/lib/qtmain.prl:
+C:/Qt/5.10.1/mingw53_32/lib/Qt5MultimediaWidgets.prl:
+C:/Qt/5.10.1/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/5.10.1/mingw53_32/lib/Qt5Widgets.prl:
 C:/Qt/5.10.1/mingw53_32/lib/Qt5Gui.prl:
+C:/Qt/5.10.1/mingw53_32/lib/Qt5Network.prl:
 C:/Qt/5.10.1/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ProjetoK.pro -spec win32-g++
